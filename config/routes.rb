@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'web_scrappers/index'
+  root to:"travels#index"
   resources :web_scrappings
   resources :falsh_way_mappings
   resources :travels

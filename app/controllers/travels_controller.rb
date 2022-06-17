@@ -1,6 +1,6 @@
 class TravelsController < ApplicationController
   before_action :set_travel, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
   # GET /travels or /travels.json
   def index
     @travels = Travel.all

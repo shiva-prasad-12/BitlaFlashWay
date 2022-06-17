@@ -1,26 +1,59 @@
-<h2>Log in</h2>
+<div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar" class="active">
+        <h1><a href="#" class="logo">B.</a></h1>        
+        <div class="footer">
+            <p>
+                Copyright ©
+                <script>document.write(new Date().getYear());</script>2022 All rights reserved | This template is
+                made with <i class="icon-heart" aria-hidden="true"></i> by <b>Bitla</b>
+            </p>
+        </div>
+    </nav>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div id="content" class="p-4 p-md-5">
+        
+    <div class="container">
+        <section class="vh-80" >
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+            <img src="/assets/banner.png" alt="login form" class="img-fluid h-100" style="border-radius: 1rem 0 0 1rem;" />          
+            </div> 
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+                 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+
+                  <div class="form-outline mb-4">                    
+                     <%= f.email_field :email, autofocus: true, autocomplete: "email",  class:"form-control form-control-lg" %>
+                  </div>
+
+                  <div class="form-outline mb-4">                    
+                    <%= f.password_field :password, autocomplete: "current-password", class:"form-control form-control-lg" %>
+                  </div>
+
+                  <div class="pt-1 mb-4">                    
+                     <%= f.submit "Login",class:"btn btn-dark btn-lg btn-block" %>
+                  </div>
+
+                  <a class="small text-muted" href="#!">Forgot password?</a>
+                  
+                <%end%>
+                <%= render "devise/shared/links" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
+</section>
 
-<%= render "devise/shared/links" %>
+
+    </div>
+</div>
