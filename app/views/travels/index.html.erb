@@ -22,7 +22,7 @@
             </p>
         </div>
     </nav>
-
+  
     <div id="content" class="p-4 p-md-5">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">                
@@ -36,7 +36,7 @@
                 
                     <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item active">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-circle-user"></i> &nbsp;&nbsp;Welecome, Admin</a>
+                            <a class="nav-link" href="#"><i class="fa-solid fa-circle-user"></i> &nbsp;&nbsp;Welecome, <%=current_user.email%></a>                            
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="#">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-bell"></i></a>
@@ -46,125 +46,11 @@
                 </div>
             </div>
         </nav>
-        <section class="vh-10 rounded bg-light shadow mb-5">
-        <div class="container-fluid pt-4 px-4">
-                <div class="row">
-                  <div class="col col-ml-12">
-                    <h2>Scrapping</h2>
-                  </div>
-                </div>
-                <div class="row g-4 ">
-                    <div class="col-sm-6 col-xl-3 mb-4 cursor">
-                        <div class="bg-primary rounded d-flex align-items-center justify-content-between p-4 text-white">                            
-                            <div class="ms-3">
-                                <h2 class="mb">Trains</h2>                            
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3 mb-4 cursor">
-                        <div class="bg-primary rounded d-flex align-items-center justify-content-between p-4 text-white">                            
-                            <div class="ms-3">
-                                <h2 class="mb">Flights</h2>                            
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3 mb-4 cursor">
-                        <div class="bg-primary rounded d-flex align-items-center justify-content-between p-4 text-white">                            
-                            <div class="ms-3">
-                                <h2 class="mb">Buses</h2>                            
-                            </div>
-                        </div>
-                    </div>                                  
-                </div>
-            </div>
-        </section>
-        <section class="vh-10 rounded bg-light shadow mb-5">
-        <div class="container-fluid pt-4 px-4">
-                <div class="row">
-                  <div class="col col-ml-12">
-                    <h2>API's</h2>
-                  </div>
-                </div>
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-3 mb-4 cursor">
-                        <div class="bg-info bg-gradient rounded d-flex align-items-center justify-content-between p-4 text-white">                            
-                            <div class="ms-3">
-                                <h2 class="mb">Trains</h2>                            
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3 mb-4 cursor">
-                        <div class="bg-info bg-gradient rounded d-flex align-items-center justify-content-between p-4 text-white">                            
-                            <div class="ms-3">
-                                <h2 class="mb">Flights</h2>                            
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3 mb-4 cursor">
-                        <div class="bg-info bg-gradient rounded d-flex align-items-center justify-content-between p-4 text-white">                            
-                            <div class="ms-3">
-                                <h2 class="mb">Buses</h2>                            
-                            </div>
-                        </div>
-                    </div>                                  
-                </div>
-            </div>
-        </section>
-
-        <section class="vh-10 rounded bg-light shadow-sm mt-3">
-        <div class="container-fluid pt-4 px-4">
-          <div class="row">
-          <div class="col col-md-10">
-                    <h2>Results</h2>
-            </div>
-            <div class="col col-md-2">
-                  <button type="button" class="btn btn-primary cursor">Update operators</button>
-            </div>            
-          </div>
-          <div class="row shadow-sm">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Origin</th>
-                  <th scope="col">Destination</th>
-                  <th scope="col">Reamarks</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>21/7/2022</td>
-                  <td>Bangalore</td>
-                  <td>Chennai</td>
-                  <td>Train cancelled due to heavy rains in Bangalore</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                   <td>28/7/2022</td>
-                  <td>Bangalore</td>
-                  <td>Hyderabad</td>
-                  <td>Train cancelled due to heavy rains in Bangalore</td>
-                </tr>
-               <tr>
-                  <th scope="row">2</th>
-                   <td>28/7/2022</td>
-                  <td>Bangalore</td>
-                  <td>Pune</td>
-                  <td>Flight schedule postponed due to weather conditions</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                   <td>28/7/2022</td>
-                  <td>Bangalore</td>
-                  <td>Pune</td>
-                  <td>Bus schedule cancelled due to low occupancy</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          </div>
-        </section>
+        <%if current_user.email == "bitlaflashway@bitla.com"%>
+        <%#if false%>
+        <%= render :partial => "travels/dashboard" %>
+        <%else%>
+        <%= render :partial => "travels/operator" %>
+        <%end%>
     </div>
 </div>
