@@ -1,0 +1,17 @@
+<%= form_with(model: falsh_way_mapping, local: true) do |form| %>
+  <% if falsh_way_mapping.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(falsh_way_mapping.errors.count, "error") %> prohibited this falsh_way_mapping from being saved:</h2>
+
+      <ul>
+        <% falsh_way_mapping.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

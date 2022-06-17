@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Falsh Way Mappings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @falsh_way_mappings.each do |falsh_way_mapping| %>
+      <tr>
+        <td><%= link_to 'Show', falsh_way_mapping %></td>
+        <td><%= link_to 'Edit', edit_falsh_way_mapping_path(falsh_way_mapping) %></td>
+        <td><%= link_to 'Destroy', falsh_way_mapping, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Falsh Way Mapping', new_falsh_way_mapping_path %>
