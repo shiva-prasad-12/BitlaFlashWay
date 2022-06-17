@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem "pry-rails"
 gem "pry-nav"
+gem 'kimurai'
+gem 'open-uri'
+gem 'ri_cal'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

@@ -9,6 +9,7 @@ class WebScrapper < Kimurai::Base
 
 	def parse(response, url:, data: { })
 	blogs = []
+	puts response.xpath("//table[@class='topic-list']//tbody//tr")
 	response.xpath("//table[@class='topic-list']//tbody//tr").each do |tr|
 	scrapped_data = {
 	                title: tr.at('td[1]//span').text,

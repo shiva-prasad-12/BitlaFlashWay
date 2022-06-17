@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2022_06_17_054108) do
     t.integer "travel_id"
     t.boolean "approved"
     t.string "remarks"
+    t.integer "web_scrapping_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -23,6 +24,9 @@ ActiveRecord::Schema.define(version: 2022_06_17_054108) do
   create_table "travels", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "status"
+    t.integer "op_travel_id"
+    t.string "email_id"
+    t.text "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -42,8 +46,9 @@ ActiveRecord::Schema.define(version: 2022_06_17_054108) do
   create_table "web_scrappings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "data"
     t.string "resource_from"
-    t.date "scapped_date"
+    t.date "scrapped_date"
     t.text "description"
+    t.string "web_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

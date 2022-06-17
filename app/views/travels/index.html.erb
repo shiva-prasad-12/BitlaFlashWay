@@ -10,9 +10,6 @@
             <li class="active">
                 <a href="#"><span class="fa fa-home"></span> Dashboard</a>
             </li>
-            <li>
-                <a href="#"><span class="fa fa-gavel"></span> Licesnes and Aggrement</a>
-            </li>
         </ul>
         <div class="footer">
             <p>
@@ -26,7 +23,7 @@
     <div id="content" class="p-4 p-md-5">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">                
-                <h2 class="fw-normal ml-4" style="letter-spacing: 1px;">Bitla Flash Way</h2>
+                <h2 class="fw-normal ml-4" style="letter-spacing: 1px;">BITLA FLASH WAY</h2>
                 <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -36,18 +33,18 @@
                 
                     <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item active">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-circle-user"></i> &nbsp;&nbsp;Welecome, <%=current_user.email%></a>                            
+                            <a class="nav-link" href="#"><i class="fa-solid fa-circle-user"></i> &nbsp;&nbsp;<%=current_user.email%>  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></a>                            
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-bell"></i></a>
+                            <%#= link_to "Sign out", destroy_user_session_path, :method => :delete %>
                         </li>
 
                     </ul>
                 </div>
             </div>
         </nav>
-        <%if current_user.email == "bitlaflashway@bitla.com"%>
-        <%#if false%>
+        <%#if current_user.email == "bitlaflashway@bitla.com"%>
+        <%if true%>
         <%= render :partial => "travels/dashboard" %>
         <%else%>
         <%= render :partial => "travels/operator" %>
