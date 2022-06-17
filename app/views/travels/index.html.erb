@@ -23,7 +23,7 @@
     <div id="content" class="p-4 p-md-5">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">                
-                <h2 class="fw-normal ml-4" style="letter-spacing: 1px;">BITLA FLASH WAY</h2>
+                <h2 class="fw-normal ml-4" style="letter-spacing: 1px;"><%= current_user.email.to_s == ("shiv.prasad215@gmail.com") ? "BITLA TRAVELS" : "BITLA FLASH WAY" %></h2>
                 <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -43,8 +43,7 @@
                 </div>
             </div>
         </nav>
-        <%#if current_user.email == "bitlaflashway@bitla.com"%>
-        <%if true%>
+        <%if !(current_user.email == "shiv.prasad215@gmail.com")%>
         <%= render :partial => "travels/dashboard" %>
         <%else%>
         <%= render :partial => "travels/operator" %>

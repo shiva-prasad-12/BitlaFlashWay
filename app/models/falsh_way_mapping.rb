@@ -1,2 +1,3 @@
 class FalshWayMapping < ApplicationRecord
 end
+
